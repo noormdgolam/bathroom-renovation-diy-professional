@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bathroom-renovation-diy-professional.bongshai.com/sitemap.xml

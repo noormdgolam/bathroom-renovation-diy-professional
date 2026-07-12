@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ title }}",
+  "description": "{{ description }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="hero category-hero">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+</section>
+
+<section class="recent-articles">
+    <h2>All Articles in {{ title }}</h2>
+    <div class="article-grid">
+        {% for article in articles %}
+        <article class="card">
+            <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            <p>{{ article.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

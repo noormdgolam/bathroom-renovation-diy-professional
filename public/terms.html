@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <meta name="description" content="Terms of service for our website.">
+    
+    <!-- PWA & SEO -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#005f73">
+    <link rel="canonical" href="https://bathroom-renovation-diy-professional.bongshai.com/terms.html">
+    <link rel="alternate" hreflang="en-US" href="https://bathroom-renovation-diy-professional.bongshai.com/terms.html">
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE" />
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Terms of Service">
+    <meta property="og:description" content="Terms of service for our website.">
+    <meta property="og:url" content="https://bathroom-renovation-diy-professional.bongshai.com/terms.html">
+    <meta property="og:image" content="https://bathroom-renovation-diy-professional.bongshai.com/assets/default-og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- JSON-LD Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://bathroom-renovation-diy-professional.bongshai.com"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms of Service",
+        "item": "https://bathroom-renovation-diy-professional.bongshai.com/terms.html"
+      }]
+    }
+    </script>
+    
+    
+    
+    <!-- Google Analytics GA4 Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="site-branding">Bathroom Renovation DIY Guide</a>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">☰</button>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container container">
+        <input type="text" id="searchInput" placeholder="Search guides...">
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <main class="site-main container">
+        
+<article class="single-page">
+    <div class="page-content">
+        <h1>Terms of Service</h1>
+<p>By using our website, you agree to these Terms of Service. All content is for informational purposes only.</p>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-widget">
+                <h3>Newsletter</h3>
+                <p>Get the latest DIY tips and pro advice directly in your inbox.</p>
+                <form action="#" class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-widget">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bathroom Renovation DIY Guide. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner hidden">
+        <p>We use cookies, including Google AdSense, to ensure you get the best experience on our website. <a href="/privacy-policy.html">Learn more</a>.</p>
+        <button id="acceptCookies" class="btn">Accept</button>
+    </div>
+
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/search.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+</body>
+</html>

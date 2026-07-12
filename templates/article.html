@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="application/ld+json">
+[{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ author }}"
+  },
+  "datePublished": "{{ date }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site_name }}"
+  }
+},
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Is it safe to do this myself?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If it involves structural changes or complex electrical/plumbing, it's highly recommended to hire a licensed pro."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How long does this usually take?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A typical DIY project takes 2-4 times longer than a professional timeline. Factor in your personal availability."
+    }
+  }]
+}]
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="article-layout">
+    <main class="article-main">
+        <header class="article-header">
+            <h1>{{ title }}</h1>
+            <div class="meta">
+                By <span class="author">{{ author }}</span> | 
+                <time datetime="{{ date }}">{{ date }}</time> | 
+                <span class="category"><a href="/category/{{ category }}.html">{{ hub_title }}</a></span>
+            </div>
+            
+            <!-- Social Share (Inline) -->
+            <div class="social-share">
+                <span>Share: </span>
+                <button onclick="window.open('https://twitter.com/intent/tweet?url={{ site_url }}{{ url }}&text={{ title }}', '_blank')">Twitter</button>
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site_url }}{{ url }}', '_blank')">Facebook</button>
+                <button onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ site_url }}{{ url }}', '_blank')">LinkedIn</button>
+                <button onclick="window.open('https://pinterest.com/pin/create/button/?url={{ site_url }}{{ url }}&description={{ title }}', '_blank')">Pinterest</button>
+                <button onclick="navigator.clipboard.writeText('{{ site_url }}{{ url }}'); alert('Link copied!');">Copy Link</button>
+            </div>
+        </header>
+
+        <div class="article-content">
+            {{ content }}
+        </div>
+        
+        <footer class="article-footer">
+            <div class="author-bio">
+                <h3>About the Author</h3>
+                <p>Our DIY Renovation Experts have years of hands-on experience remodeling bathrooms. We believe in empowering homeowners with honest, practical advice.</p>
+                <a href="/about.html">Read more about us</a>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="article-sidebar">
+        <div class="sidebar-widget">
+            <h3>Related in {{ hub_title }}</h3>
+            <ul class="related-list">
+                {% for related in related_articles %}
+                <li>
+                    <a href="{{ related.url }}">{{ related.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>Master Your Bathroom Renovation</h1>
+    <p>Expert advice on when to DIY and when to hire a professional for your bathroom remodel. Save money without sacrificing quality.</p>
+</section>
+
+<section class="hubs-section">
+    <h2>Explore by Topic</h2>
+    <div class="article-grid">
+        {% for slug, hub in hubs.items() %}
+        <article class="card" style="border-color: var(--primary-color);">
+            <h3><a href="/category/{{ slug }}.html">{{ hub.title }}</a></h3>
+            <p>{{ hub.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="recent-articles">
+    <h2>Latest Guides</h2>
+    <div class="article-grid">
+        {% for article in articles %}
+        <article class="card">
+            <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            <p>{{ article.description }}</p>
+            <span class="category-badge"><a href="/category/{{ article.category }}.html">{{ article.category }}</a></span>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
