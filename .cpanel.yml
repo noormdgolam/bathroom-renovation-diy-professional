@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/username/public_html/bathroom-renovation-diy-professional.bongshai.com/
-    - /bin/cp -R public/* $DEPLOYPATH

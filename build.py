@@ -11,7 +11,7 @@ ARTICLES_DIR = os.path.join(CONTENT_DIR, "articles")
 PAGES_DIR = os.path.join(CONTENT_DIR, "pages")
 TEMPLATES_DIR = "templates"
 ASSETS_DIR = "assets"
-PUBLIC_DIR = "public"
+PUBLIC_DIR = "."
 SITE_URL = "https://bathroom-renovation-diy-professional.bongshai.com"
 SITE_NAME = "Bathroom Renovation DIY Guide"
 
@@ -65,18 +65,6 @@ def parse_markdown(filepath):
     return metadata, html_content
 
 def build_site():
-    if not os.path.exists(PUBLIC_DIR):
-        os.makedirs(PUBLIC_DIR)
-        
-    public_assets = os.path.join(PUBLIC_DIR, "assets")
-    if os.path.exists(public_assets):
-        shutil.rmtree(public_assets)
-    shutil.copytree(ASSETS_DIR, public_assets)
-    
-    # Copy .htaccess for cPanel caching
-    if os.path.exists(".htaccess"):
-        shutil.copy(".htaccess", os.path.join(PUBLIC_DIR, ".htaccess"))
-    
     articles = []
     hub_articles = {key: [] for key in HUBS.keys()}
     
